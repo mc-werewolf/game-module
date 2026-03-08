@@ -3,6 +3,7 @@
   "version": "0.1.4",
   "description": "Werewolf Game Module on Kairo.ts",
   "type": "module",
+  "packageManager": "pnpm@10.31.0",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -15,12 +16,13 @@
     "url": "git@github.com:mc-werewolf/game-module.git"
   },
   "scripts": {
+    "preinstall": "node -e \"if (!process.env.npm_config_user_agent?.includes('pnpm')) { console.error('This project requires pnpm. Please use pnpm@10.31.0.'); process.exit(1); }\"",
     "clean": "rimraf lib",
     "build:types": "tsc",
     "build:js": "node build.mjs",
-    "build": "npm run clean && npm run build:types && npm run build:js",
-    "version:patch": "npm version patch",
-    "prepublishOnly": "npm run version:patch && npm run build"
+    "build": "pnpm run clean && pnpm run build:types && pnpm run build:js",
+    "version:patch": "pnpm version patch",
+    "prepublishOnly": "pnpm run version:patch && pnpm run build"
   },
   "peerDependencies": {
     "@kairo-js/router": "^0.1.1",
