@@ -1,0 +1,41 @@
+{
+    "name": "@mc-werewolf/module",
+    "version": "0.1.0",
+    "description": "Shared module for mc-werewolf addons",
+    "type": "module",
+    "license": "MIT",
+    "packageManager": "pnpm@10.31.0",
+    "sideEffects": false,
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./lib/index.js",
+            "types": "./lib/index.d.ts"
+        }
+    },
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:mc-werewolf/module.git"
+    },
+    "scripts": {
+        "build": "tsup",
+        "release": "pnpm run build && npm publish"
+    },
+    "peerDependencies": {
+        "@kairo-js/router": "^1.0.0-beta.0",
+        "@minecraft/server": "^2.8.0",
+        "@minecraft/server-ui": "^2.0.0"
+    },
+    "devDependencies": {
+        "@kairo-js/router": "file:../kairo-router",
+        "@minecraft/server": "^2.8.0",
+        "@minecraft/server-ui": "^2.0.0",
+        "prettier": "^3.8.1",
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.3"
+    }
+}
