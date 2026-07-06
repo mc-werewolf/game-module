@@ -23,6 +23,7 @@
     },
     "scripts": {
         "build": "tsup",
+        "postbuild": "node .build/postprocess-dts.js",
         "release": "pnpm run build && npm publish"
     },
     "peerDependencies": {
@@ -35,6 +36,7 @@
         "@minecraft/server": "^2.8.0",
         "@minecraft/server-ui": "^2.0.0",
         "prettier": "^3.8.1",
+        "ts-morph": "^28.0.0",
         "tsup": "^8.5.1",
         "typescript": "^5.9.3"
     }
