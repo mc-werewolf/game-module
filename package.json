@@ -1,10 +1,10 @@
 {
     "name": "@mc-werewolf/module",
-    "version": "0.1.0",
+    "version": "0.1.1-beta.0",
     "description": "Shared module for mc-werewolf addons",
     "type": "module",
     "license": "MIT",
-    "packageManager": "pnpm@10.31.0",
+    "packageManager": "pnpm@11.1.1",
     "sideEffects": false,
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -22,18 +22,19 @@
         "url": "git@github.com:mc-werewolf/werewolf-module.git"
     },
     "scripts": {
-        "build": "tsup",
+        "clean": "tsup --clean",
+        "build": "tsup && prettier --write lib/index.js",
         "postbuild": "node .build/postprocess-dts.js",
-        "release": "pnpm run build && npm publish"
+        "release": "pnpm run build && npm publish --tag beta"
     },
     "peerDependencies": {
         "@kairo-js/router": "^1.0.0-beta.0",
-        "@minecraft/server": "^2.8.0",
+        "@minecraft/server": "^2.9.0 || >=2.9.0-beta <3.0.0",
         "@minecraft/server-ui": "^2.0.0"
     },
     "devDependencies": {
         "@kairo-js/router": "file:../kairo-router",
-        "@minecraft/server": "^2.8.0",
+        "@minecraft/server": "^2.9.0",
         "@minecraft/server-ui": "^2.0.0",
         "prettier": "^3.8.1",
         "ts-morph": "^28.0.0",

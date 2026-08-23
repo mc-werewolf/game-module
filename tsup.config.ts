@@ -7,6 +7,6 @@ export default defineConfig({
     outDir: "lib",
     clean: true,
     splitting: false,
-    minify: false,
+    minify: true,
     external: ["@minecraft/server", "@minecraft/server-ui", "@kairo-js/router", "@kairo-js/properties"],
 });

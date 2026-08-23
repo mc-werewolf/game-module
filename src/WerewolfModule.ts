@@ -69,6 +69,7 @@ export class WerewolfModule {
                     faction: role.faction,
                     divinationResult: role.divinationResult,
                     color: role.color,
+                    sortIndex: role.sortIndex,
                     index: role.index,
                     max: role.max,
                     step: role.step,

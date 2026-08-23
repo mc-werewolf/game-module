@@ -30,6 +30,7 @@ export type {
     SkillContext,
     SkillResult,
 } from "./types/SkillRuntime";
+export type { ChatSendEvent } from "./types/ChatRuntime";
 export type {
     SettingDefinition,
     SettingValue,
